@@ -5,8 +5,59 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PcCleaner"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="PcCleaner" Height="600" Width="1080" ResizeMode="NoResize" Icon="/icon-PcCleaner.png" WindowStartupLocation="CenterScreen">
     <Grid>
+
+        <!-- top-->
+        <Rectangle Margin="0,0,0,408" Fill="#FF2BAD72" StrokeThickness="0"/>
+        <Label Content="Analyse du PC nécessaire" HorizontalAlignment="Left" Margin="40,11,0,0" VerticalAlignment="Top" Height="54" Width="458" FontFamily="Arial" FontSize="36" FontWeight="Bold" Foreground="White"/>
+        <Label Content="Espace à nettoyer :" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Height="45" Width="181" FontFamily="Arial" FontSize="20" Foreground="White"/>
+        <Label Content="Dernière analyse :" HorizontalAlignment="Left" Margin="40,118,0,0" VerticalAlignment="Top" Height="34" Width="176" FontFamily="Arial" FontSize="20" Foreground="White"/>
+        <Label x:Name="date" Content="Jamais" HorizontalAlignment="Left" Margin="221,118,0,0" VerticalAlignment="Top" Height="45" Width="176" FontFamily="Arial" FontSize="20" RenderTransformOrigin="0.449,1.556" Foreground="White"/>
+        <Label x:Name="espace" Content="??? Mb" HorizontalAlignment="Left" Margin="221,75,0,0" VerticalAlignment="Top" Height="45" Width="176" FontFamily="Arial" FontSize="20" Foreground="White"/>
+        <Button x:Name="analyse" Content="Analyser " HorizontalAlignment="Left" Margin="711,46,0,0" VerticalAlignment="Top" Height="71" Width="268" BorderThickness="6,6,6,6" Click="analyse_Click" FontFamily="Arial" FontWeight="Bold" BorderBrush="White" Background="{x:Null}" FontSize="25" Foreground="White"/>
+        <Rectangle Height="66" Margin="0,125,0,0" VerticalAlignment="Top" StrokeThickness="0" RenderTransformOrigin="0.506,-1.945">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF2BAD72" Opacity="0.1"/>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <!-- mid -->
+        <Rectangle HorizontalAlignment="Center" Height="393" Margin="0,191,0,0" VerticalAlignment="Top" Width="1080" StrokeThickness="0">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF2BAD72" Opacity="0.05"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="clean" Content="Nettoyer" Margin="48,282,754,0" VerticalAlignment="Top" Height="134" Background="#FF2BAD72" FontSize="36" FontFamily="Arial" Foreground="White" Click="clean_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF2BAD72" Opacity="0.1"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="historic" Content="Historique" HorizontalAlignment="Center" Margin="0,282,0,0" VerticalAlignment="Top" Height="134" Width="278" Background="#FF2BAD72" FontSize="36" FontFamily="Arial" Foreground="White" Click="historic_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF0D4A2E" Opacity="0.1"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="update" Content="Mise à jour" Margin="754,282,48,0" VerticalAlignment="Top" Height="134" Background="#FF2BAD72" FontSize="36" Foreground="White" Click="update_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF2BAD72" Opacity="0.1"/>
+            </Button.BorderBrush>
+        </Button>
+
+        <!-- bot -->
+        <Rectangle HorizontalAlignment="Center" Height="82" Margin="0,502,0,0" VerticalAlignment="Top" Width="1080">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="#FF2BAD72" Opacity="0.1"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Label Content="Copyright 2022  - @KilianCr" HorizontalAlignment="Left" Margin="10,515,0,0" VerticalAlignment="Top" Height="34" Width="259" FontSize="18" FontWeight="Bold"/>
+        <Button x:Name="website" Content="Site Web" HorizontalAlignment="Left" Margin="845,518,0,0" VerticalAlignment="Top" Height="34" Width="199" Click="website_Click" FontSize="18" FontWeight="Normal" HorizontalContentAlignment="Center" Background="#FF2BAD72" Foreground="White">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF2BAD72" Opacity="0.1"/>
+            </Button.BorderBrush>
+        </Button>
+
+
 
     </Grid>
 </Window>
