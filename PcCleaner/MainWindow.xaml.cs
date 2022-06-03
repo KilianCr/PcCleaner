@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace PcCleaner
 {
     /// <summary>
@@ -61,7 +62,27 @@ namespace PcCleaner
         }
         private void analyse_Click(object sender, RoutedEventArgs e)
         {
+            AnalyseFolders();
+        }
 
+        private void AnalyseFolders()
+        {
+            long totalSize = 0;
+            Cleaner cleaner = new();
+            try
+            {
+                totalSize += cleaner.DirectorySize(cleaner.winTemp) / 1_000_000;
+                totalSize += cleaner.DirectorySize(cleaner.appTemp) / 1_000_000;
+                espace.Content = totalSize + " Mb";
+                date.Content = DateTime.Now;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erreur lié a la lecture des dossiers, verifié que l'explorateur de fichier est bien fermé ");
+            }
+            
+
+            
         }
     }
 }

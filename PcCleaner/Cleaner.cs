@@ -9,28 +9,33 @@ namespace PcCleaner
 {
     internal class Cleaner
     {
-        private DirectoryInfo winTemp { get; }
-        private DirectoryInfo appTemp{ get; }
+        private DirectoryInfo _winTemp;
+        public DirectoryInfo winTemp => _winTemp;
+
+        private DirectoryInfo _appTemp;
+        public DirectoryInfo appTemp => _appTemp;
+
+        private List<string> clearFiles = new List<string>();
 
     public Cleaner()
         {
-            winTemp = new DirectoryInfo(@"C:\Windows\Temp");
-            appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
+            _winTemp = new DirectoryInfo(@"C:\Windows\Temp");
+            _appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
         }
 
         public long DirectorySize(DirectoryInfo dir)
         {
             return dir.GetFiles().Sum(f => f.Length) + dir.GetDirectories().Sum(di => DirectorySize(di));
         }
-        public List<string> Clear(DirectoryInfo dir)
+        public void Clear(DirectoryInfo dir)
         {
-            List<string> list = new List<string>();
+            
             foreach (FileInfo file in dir.GetFiles())
             {
                 try
                 {
                     file.Delete();
-                    list.Add(file.FullName);
+                    clearFiles.Add(file.FullName);
 
                 }
                 catch (Exception e)
@@ -39,13 +44,13 @@ namespace PcCleaner
                 }
 
             }
-            list.Add("-");
+            clearFiles.Add("-");
             foreach (DirectoryInfo di in dir.GetDirectories())
             {
                 try
                 {
-                    di.Delete();
-                    list.Add(di.FullName);
+                    di.Delete(true);
+                    clearFiles.Add(di.FullName);
 
                 }
                 catch (Exception e)
@@ -54,7 +59,7 @@ namespace PcCleaner
                 }
 
             }
-            return list;
+            
         }
     }
   

@@ -14,7 +14,7 @@
         <Label Content="Espace à nettoyer :" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Height="45" Width="181" FontFamily="Arial" FontSize="20" Foreground="White"/>
         <Label Content="Dernière analyse :" HorizontalAlignment="Left" Margin="40,118,0,0" VerticalAlignment="Top" Height="34" Width="176" FontFamily="Arial" FontSize="20" Foreground="White"/>
         <Label x:Name="date" Content="Jamais" HorizontalAlignment="Left" Margin="221,118,0,0" VerticalAlignment="Top" Height="45" Width="176" FontFamily="Arial" FontSize="20" RenderTransformOrigin="0.449,1.556" Foreground="White"/>
-        <Label x:Name="espace" Content="??? Mb" HorizontalAlignment="Left" Margin="221,75,0,0" VerticalAlignment="Top" Height="45" Width="176" FontFamily="Arial" FontSize="20" Foreground="White"/>
+        <Label x:Name="espace" Content="---- Mb" HorizontalAlignment="Left" Margin="221,75,0,0" VerticalAlignment="Top" Height="45" Width="88" FontFamily="Arial" FontSize="20" Foreground="White"/>
         <Button x:Name="analyse" Content="Analyser " HorizontalAlignment="Left" Margin="711,46,0,0" VerticalAlignment="Top" Height="71" Width="268" BorderThickness="6,6,6,6" Click="analyse_Click" FontFamily="Arial" FontWeight="Bold" BorderBrush="White" Background="{x:Null}" FontSize="25" Foreground="White"/>
         <Rectangle Height="66" Margin="0,125,0,0" VerticalAlignment="Top" StrokeThickness="0" RenderTransformOrigin="0.506,-1.945">
             <Rectangle.Fill>
